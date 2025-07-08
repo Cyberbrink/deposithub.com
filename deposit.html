@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deposit Hub Interface</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .container { max-width: 400px; margin: auto; }
+    .balance { font-size: 1.5em; margin-bottom: 10px; }
+    input[type="number"] { width: 100%; padding: 8px; margin-bottom: 10px; }
+    button { width: 100%; padding: 10px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Deposit Hub Interface</h1>
+    <div class="balance">Balance: $<span id="balance">0.00</span></div>
+    <label for="amount">Amount</label>
+    <input id="amount" type="number" min="0" step="0.01" />
+    <button id="depositBtn">Deposit</button>
+    <button id="withdrawBtn">Withdraw</button>
+  </div>
+  <script src="js/deposit-interface.js"></script>
+</body>
+</html>
