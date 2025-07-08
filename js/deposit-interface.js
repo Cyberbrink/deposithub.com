@@ -4,9 +4,10 @@
   const depositBtn = document.getElementById('depositBtn');
   const withdrawBtn = document.getElementById('withdrawBtn');
 
-  let balance = 0;
+  let balance = parseFloat(localStorage.getItem('balance')) || 0;
   function update() {
     balanceEl.textContent = balance.toFixed(2);
+    localStorage.setItem('balance', balance.toFixed(2));
   }
 
   depositBtn.addEventListener('click', () => {
