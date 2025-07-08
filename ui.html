@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deposit Hub UI</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin: 2rem; background-color: #f4f4f4;}
+    .container {max-width: 400px; margin: auto; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);} 
+    label {display: block; margin-top: 1rem;}
+    input[type="text"], input[type="number"] {width: 100%; padding: 0.5rem; margin-top: 0.25rem;}
+    button {margin-top: 1.5rem; padding: 0.5rem 1rem;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Deposit Hub</h1>
+    <form id="deposit-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Your name" required>
+      <label for="amount">Deposit Amount</label>
+      <input type="number" id="amount" placeholder="0.00" required>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+  </div>
+<script>
+  document.getElementById('deposit-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value.trim();
+    var amount = document.getElementById('amount').value;
+    if(!name || !amount){
+      document.getElementById('message').textContent = 'Please enter your name and amount.';
+      return;
+    }
+    document.getElementById('message').textContent = 'Thank you, '+ name + '! Deposit of $' + amount + ' received.';
+    this.reset();
+  });
+</script>
+</body>
+</html>
